@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Andy Leak"]
   s.email       = ["andy@r210.com"]
-  # s.homepage    = "TBD"
+  s.homepage    = "http://github.com/andyl/vgtd"
   s.summary     = %q{VimGTD}
   s.description = %q{Helper classes for VimGTD}
 
