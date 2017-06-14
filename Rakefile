@@ -14,7 +14,7 @@ Bundler::GemHelper.install_tasks
 end
 
 require 'rake'
-require 'rspec/core/rake_task'
+# require 'rspec/core/rake_task'
 
 def break() puts '*' * 60; end
 
@@ -72,79 +72,79 @@ namespace :db do
 
 end
 
-desc "Run all specs"
-task :spec do
-  cmd = "rspec -O spec/spec.opts spec/**/*_spec.rb"
-  puts "Running All Specs"
-  puts cmd
-  system cmd
-end
+# desc "Run all specs"
+# task :spec do
+#   cmd = "rspec -O spec/spec.opts spec/**/*_spec.rb"
+#   puts "Running All Specs"
+#   puts cmd
+#   system cmd
+# end
 
-namespace :spec do
-  desc "Show spec documentation"
-  task :doc do
-    cmd = "rspec -O spec/spec.opts --format documentation spec/**/*_spec.rb"
-    puts "Generating Spec documentation"
-    puts cmd
-    system cmd
-  end
+# namespace :spec do
+#   desc "Show spec documentation"
+#   task :doc do
+#     cmd = "rspec -O spec/spec.opts --format documentation spec/**/*_spec.rb"
+#     puts "Generating Spec documentation"
+#     puts cmd
+#     system cmd
+#   end
+#
+#   desc "Generate HTML documentation"
+#   task :html do
+#     outfile = '/tmp/spec.html'
+#     cmd = "rspec -O spec/spec.opts --format html spec/**/*_spec.rb > #{outfile}"
+#     puts "Generating HTML documentation"
+#     puts cmd
+#     system cmd
+#     puts "HTML documentation written to #{outfile}"
+#   end
+#
+# end
 
-  desc "Generate HTML documentation"
-  task :html do
-    outfile = '/tmp/spec.html'
-    cmd = "rspec -O spec/spec.opts --format html spec/**/*_spec.rb > #{outfile}"
-    puts "Generating HTML documentation"
-    puts cmd
-    system cmd
-    puts "HTML documentation written to #{outfile}"
-  end
-
-end
-
-namespace :doc do
-
-  task :rcov_cleanup do
-    system "rm -rf coverage"
-  end
-
-  desc ""
-  RSpec::Core::RakeTask.new(:run_rcov) do |t|
-    t.rcov = true
-    t.rcov_opts = %q[--exclude "/home" --exclude "spec"]
-    t.verbose = true
-  end
-
-  desc "Generate coverage report"
-  task :rcov => [:rcov_cleanup, :run_rcov] do
-    puts "Rcov generated - view at 'coverage/index.html'"
-  end
-
-  task :rdoc_cleanup do
-    system "rm -rf doc"
-  end
-
-  desc "Generate Rdoc"
-  task :rdoc => :rdoc_cleanup do
-    system "rdoc lib/*.rb README.rdoc -N --main README.rdoc"
-    puts "Rdoc generated - view at 'doc/index.html'"
-  end
-
-  desc "Remove all Rcov and Rdoc data"
-  task :cleanup => ['spec:rcov_cleanup', :rdoc_cleanup] do
-    puts "Done"
-  end
-  task :clean => :cleanup
-
-end
+# namespace :doc do
+#
+#   task :rcov_cleanup do
+#     system "rm -rf coverage"
+#   end
+#
+#   desc ""
+#   RSpec::Core::RakeTask.new(:run_rcov) do |t|
+#     t.rcov = true
+#     t.rcov_opts = %q[--exclude "/home" --exclude "spec"]
+#     t.verbose = true
+#   end
+#
+#   desc "Generate coverage report"
+#   task :rcov => [:rcov_cleanup, :run_rcov] do
+#     puts "Rcov generated - view at 'coverage/index.html'"
+#   end
+#
+#   task :rdoc_cleanup do
+#     system "rm -rf doc"
+#   end
+#
+#   desc "Generate Rdoc"
+#   task :rdoc => :rdoc_cleanup do
+#     system "rdoc lib/*.rb README.rdoc -N --main README.rdoc"
+#     puts "Rdoc generated - view at 'doc/index.html'"
+#   end
+#
+#   desc "Remove all Rcov and Rdoc data"
+#   task :cleanup => ['spec:rcov_cleanup', :rdoc_cleanup] do
+#     puts "Done"
+#   end
+#   task :clean => :cleanup
+#
+# end
 
 VT_APP_DIR = File.dirname(File.expand_path(__FILE__)) + "/../vtapp"
 
-desc "Sync Models and Migrations"
-task :sync do
-  puts "Syncing Models and Migrations"
-  system "cp #{VT_APP_DIR}/app/models/* lib/vt_util/ar_obj/models"
-  system "cp #{VT_APP_DIR}/db/migrate/* lib/vt_util/ar_obj/db/migrate"
-end
+# desc "Sync Models and Migrations"
+# task :sync do
+#   puts "Syncing Models and Migrations"
+#   system "cp #{VT_APP_DIR}/app/models/* lib/vt_util/ar_obj/models"
+#   system "cp #{VT_APP_DIR}/db/migrate/* lib/vt_util/ar_obj/db/migrate"
+# end
   
 #class Db < Thor
 #  no_tasks do

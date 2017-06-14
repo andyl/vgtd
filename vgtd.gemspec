@@ -17,17 +17,12 @@ Gem::Specification.new do |s|
   s.add_dependency 'tux'           , '~> 0'
   s.add_dependency 'radix62'       , '~> 0'
   s.add_dependency 'parslet'       , '~> 0'
-  s.add_dependency 'activesupport' , '~> 0'
+  s.add_dependency 'activesupport' , '~> 5'
   s.add_dependency 'i18n'          , '~> 0'
 
-  # s.add_dependency('wirble')
-  # s.add_dependency('drx')
-  # s.add_dependency('hirb')
-  # s.add_dependency('interactive_editor')
-  # s.add_dependency('awesome_print')
   # s.rubyforge_project = "vgtd"
-  # s.files         = `git ls-files`.split("\n")
-  # s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `ls bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 end
