@@ -12,13 +12,13 @@ Gem::Specification.new do |s|
   s.summary     = %q{VimGTD}
   s.description = %q{Helper classes for VimGTD}
 
-  s.add_dependency('rake')
-  s.add_dependency('rspec')
-  s.add_dependency('tux')
-  s.add_dependency('radix62')
-  s.add_dependency('parslet')
-  s.add_dependency('activesupport')
-  s.add_dependency('i18n')
+  s.add_dependency 'rake'          , '~> 0' 
+  s.add_dependency 'rspec'         , '~> 0'
+  s.add_dependency 'tux'           , '~> 0'
+  s.add_dependency 'radix62'       , '~> 0'
+  s.add_dependency 'parslet'       , '~> 0'
+  s.add_dependency 'activesupport' , '~> 0'
+  s.add_dependency 'i18n'          , '~> 0'
 
   # s.add_dependency('wirble')
   # s.add_dependency('drx')
