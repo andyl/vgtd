@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+File.open('./load_paths','w') do |file|
+  $LOAD_PATH.each do |path|
+    file.puts path
+  end
+end

@@ -1,0 +1,12 @@
+*.gem
+.bundle
+.tags
+Gemfile.lock
+pkg/*
+.idea
+.idea/*
+.idea/*xml
+.idea/**/*
+lib/vt_util/app_data
+lib/vt_util/app_data/*
+lib/vt_util/app_data/**/*

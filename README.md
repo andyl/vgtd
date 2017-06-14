@@ -1,2 +1,3 @@
 # vgtd
-GTD Support for Vim
+
+Utilities for managing gtd files.

@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require '/home/aleak/g/pdev_util/bin/gems/vgtd/lib/vgtd'
+
+xargs = ARGV.clone
+ARGV.delete_if {|f| ! File.exist?(f)}
+option = (xargs - ARGV).first || "none"
+
+tasks = Glist.new(ARGF.read)
+puts tasks.group(option).output

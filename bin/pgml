@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby 
+
+require 'rubygems'
+require 'gmail'
+
+abort 'Usage: pgml file [server]' if ARGV.length == 0
+
+userid = 'al.inbox1'
+passwd = 'inbox678'
+
+conn = Gmail.new(userid, passwd)
+msg_count = conn.inbox.count
+messages  = conn.inbox.emails(:from => "andy@r210.com")
+tasks = messages.map {|m| [m.subject, m.body]}
+conn.inbox.find.each { |email| email.delete! }
+conn.logout
+
+rel_count = messages.length
+
+puts "Found #{msg_count} total messages."
+puts "Found #{rel_count} relevant messages."
+
+exit if rel_count == 0
+
+def esc(text)
+  text.gsub(%q('), %q(\\\'))
+end
+
+task_output = tasks.map do |x|
+  subj = x.first
+  note = x.last.empty? ? "" : "[#{x.last}]"
+  esc("#{subj} #{note}".strip)
+end
+
+cmds = task_output.map do |text|
+  if ARGV.length == 1
+    %Q(echo '=I |#{text}' >> #{ARGV[0]})
+  else
+    %Q(ssh #{ARGV[1]} echo "=I \\|#{text}" ">>" /home/aleak/#{ARGV[0]})
+  end
+end
+
+File.open('/tmp/append_tasks.sh', 'w') do |f|
+  f.puts cmds.join("\n")
+end
+
+system "chmod +x /tmp/append_tasks.sh"
+system "cat /tmp/append_tasks.sh"
+system "/tmp/append_tasks.sh & 2> /dev/null"
+
+puts "DONE"
+

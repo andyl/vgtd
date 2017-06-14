@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby 
+
+require '/home/aleak/g/pdev_util/bin/gems/vgtd/lib/vgtd'
+
+unless ARGV.length == 1
+  abort "Usage: #{File.basename($0)} <source>.gtd" 
+end
+
+src_file = ARGV[0] 
+base = src_file.split(".").first
+ctrl = base + ".grc"
+arch = base + ".gta"
+
+unless File.exist?(src_file)
+  abort "Error: source file not found (#{src_file})" 
+end
+
+exit unless File.exist?(ctrl) || File.exist?("." + ctrl)
+
+system "pgarchive #{src_file} #{arch}"
+

@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby 
+
+require 'optparse'
+require 'readline'
+
+# This is a command-line tool to add tasks to the taskfile.
+# This script adds tasks to the inbox ("=I").
+
+BASEDIR = "/home/aleak/"
+DEFAULT = BASEDIR + "test.gtd"
+
+file, server, text = "", "", ""
+
+opts = OptionParser.new
+opts.on("-s", "--server NAME", String) { |val| server = val || ""      }
+opts.on("-f", "--file NAME",   String) { |val| file   = val || DEFAULT }
+text = opts.parse(*ARGV).join(' ')
+
+abort "Usage: #{File.basename($0)} -f file [-s server] text" if ARGV.length == 0
+
+if server.empty?
+  cmd = %Q((echo "=I |#{text}" >> #{file})& > /dev/null)
+else
+  cmd = %Q((ssh #{server} echo "=I \\|#{text}" ">>" /home/aleak/#{file})& )
+end
+
+puts cmd
+system cmd
+

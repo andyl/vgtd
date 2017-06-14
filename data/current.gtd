@@ -1,0 +1,59 @@
+{=I}
+!bmM =I :i      @ofc    |Task Label
+!x3W =I :x      @xyz    |climbing      [do something here]
+
+{=A}
+!SjF =A :c      @err -L |deposit       [deposit vanguard check]
+!NMW =A :c      @ofc -H |CapOne        [clear out Cap1 & start payback]
+!GWh =A :c      @ofc -H |filing        [file schwab & wells docs]
+!10K =A :c      @ofc -H |quicken cfg   [start to setup bank links]
+!6ZL =A :c      @ofc -L |property tax  [pay property tax]
+!OKT =A :c      @ofc    |car ins fold  [need car insurance folder]
+!Afa =A :i      @ofc    |FF Sync       [remove passwds from FF sync]
+
+{=W}
+
+{=T}
+!arP =T :p      @ofc    |ouray plans   [car and hotel] /oct20
+!3dG =T :p      @ofc    |txgiving plan [schedule mom trip] /oct15
+!ykO =T :p_car  @ofc    |plates        [order plates for silver car] /oct16
+!7AB =T :p_car  @ofc    |plates        [order plates for grey car] /oct16
+
+{=S}
+!PUu =S :t_bru  @com -L |dns switch    [switch bamru dns]
+!QjD =S :p      @com    |copyright     [update for mesa-verde-condo]
+!IoI =S :p_ff   @com    |pay don       [pay don gilbert]
+!ihM =S :t_bee  @com    |buy twine     [for bee smoker]
+!pXH =S :t_bru  @com    |climbing wire [buy climbing wire for skis]
+!gxZ =S :t_bee  @err    |strainer      [get new strainer bucket]
+!IoQ =S :h      @hom -M |fix chairs    [fix dining room chairs]
+!Ydp =S :h      @hom -M |icemaker      [fix fridge icemaker]
+!CSZ =S :h      @hom -L |clean garage  [get exercise area setup]
+!r6p =S :c      @hom    |phone bill    [check/reduce att bill]
+!Y8p =S :h      @hom    |fix window    [fix bedroom window]
+!Z4x =S :h      @hom    |window wash   [wash windows]
+!8kp =S :h_bee  @hom    |extractor     [clean and store extractor]
+!Dp8 =S :h_bee  @hom    |wax strainer  [make strainer for capping wax]
+!ZyM =S :p      @hom    |shooting trip [plan shooting trip]
+!b1R =S :p_kids @hom    |passport      [connor haiti trip]
+!GnS =S :p_kids @hom    |vaccination   [connor haiti trip]
+!KOB =S :c      @ofc    |pay mc        [pay off mastercard]
+!vf2 =S :p_kids @ofc    |kids printer  [install kids printer]
+!5Na =S :ret    @ofc    |credit report [clean up credit report]
+
+{=R}
+
+{=X}
+!Xec =X :p_kids @err    |physical      [simon sports physical]
+!mya =X :c      @ofc    |home ins      [check home insurance]
+!qTt =X :h      @hom    |dong
+
+--------------------------------------------------------------------------
+Projects:             
+- b (mktg, prod)
+- c (tax)
+- h (bee, mrm, remo)
+- i (gtd)
+- p (180, kids, lisa)
+- t (bru)
+

@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby 
+
+require '/home/aleak/g/pdev_util/bin/gems/vgtd/lib/vgtd'
+
+unless ARGV.length == 2
+  abort "Usage: #{File.basename($0)} <source>.gtd <target>.gtd" 
+end
+
+src_file = ARGV[0] 
+tgt_file = ARGV[1]
+
+unless File.exist?(src_file)
+  abort "Error: source file not found (#{src_file})" 
+end
+
+src_glist = Glist.new(File.read(src_file))
+x_tasks   = src_glist.delete_tasks("=X")
+x_tasks.each {|t| t.new_date(Time.now)}
+tgt_glist = Glist.new.add_tasks(x_tasks)
+
+exit if x_tasks.empty?
+
+File.open(src_file, 'w') {|f| f.puts src_glist.output}
+File.open(tgt_file, 'a') {|f| f.puts tgt_glist.output}
+
