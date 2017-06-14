@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby 
 
-require '/home/aleak/g/pdev_util/bin/gems/vgtd/lib/vgtd'
+require 'vgtd'
 
 unless ARGV.length == 1
   abort "Usage: #{File.basename($0)} <source>.gtd" 

@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby 
-require '/home/aleak/g/pdev_util/bin/gems/vgtd/lib/vgtd'
+
+require 'vgtd'
 
 xargs = ARGV.clone
 ARGV.delete_if {|f| ! File.exist?(f)}
